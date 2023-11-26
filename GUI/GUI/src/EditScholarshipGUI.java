@@ -119,7 +119,7 @@ public class EditScholarshipGUI extends javax.swing.JFrame {
         oldDescription.setText("<html><p>New scholarship for students in a</p> <p>computer related field</p>");
         oldDescription.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        submitEdit.setText("Submit");
+        submitEdit.setText("Update");
         submitEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 submitEditActionPerformed(evt);
