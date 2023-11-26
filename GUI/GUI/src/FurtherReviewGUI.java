@@ -2,7 +2,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package sfwe301;
 
 import java.awt.GridLayout;
 import java.util.ArrayList;
@@ -62,7 +61,7 @@ public class FurtherReviewGUI extends javax.swing.JFrame {
 
         UAPanel.setBackground(new java.awt.Color(255, 0, 0));
 
-        UAlogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sfwe301/UAlogo.png"))); // NOI18N
+        UAlogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("UAlogo.png"))); // NOI18N
         UAlogo.setText("jLabel2");
 
         titlePanel.setBackground(new java.awt.Color(0, 0, 51));

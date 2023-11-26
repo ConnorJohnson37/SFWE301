@@ -1,4 +1,3 @@
-package GUI.src;
 import java.util.Hashtable;
 import javax.swing.JOptionPane;
 
@@ -21,6 +20,7 @@ public class LoginGUI extends javax.swing.JFrame {
     public LoginGUI() {
         this.credentials = new Hashtable<>();
         initComponents();
+        this.setVisible(true);
         createLogin();
     }
     

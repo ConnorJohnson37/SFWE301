@@ -17,6 +17,7 @@ public class PasswordResetGUI extends javax.swing.JFrame {
      */
     public PasswordResetGUI() {
         initComponents();
+        this.setVisible(true);
     }
 
     /**

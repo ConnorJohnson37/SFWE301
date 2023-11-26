@@ -15,6 +15,7 @@ public class EditScholarshipGUI extends javax.swing.JFrame {
     public EditScholarshipGUI() {
         initComponents();
         populateScrollPane();
+        this.setVisible(true);
     }
 
     /**
@@ -57,7 +58,7 @@ public class EditScholarshipGUI extends javax.swing.JFrame {
 
         topBanner.setBackground(new java.awt.Color(171, 5, 32));
         topBanner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        topBanner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UAlogo.png"))); // NOI18N
+        topBanner.setIcon(new javax.swing.ImageIcon(getClass().getResource("UAlogo.png"))); // NOI18N
         topBanner.setText("                                       Edit Scholarship");
         topBanner.setToolTipText("");
         topBanner.setOpaque(true);
