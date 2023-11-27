@@ -169,12 +169,14 @@ public class HomePageGUI extends JFrame{
     private void applicantButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_applicantButtonActionPerformed
         // Create a Applicant Login Page
         LoginGUI userGUI = new LoginGUI();
+        this.dispose();
                 
     }//GEN-LAST:applicantButton
 
     private void adminButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminButtonActionPerformed
         // Create a Admin Login Page
         LoginGUI userGUI = new LoginGUI();
+        this.dispose();
         
     }//GEN-LAST:event_adminButtonActionPerformed
 
