@@ -1,0 +1,14 @@
+Login Information:
+
+username: Admin		password:password
+username: Connor	password:password
+
+
+__________________________________________
+Users Database:
+
+Michael Villasana
+Daniel Craig
+John Doe
+Alexander Hamilton
+Connor Johnson
