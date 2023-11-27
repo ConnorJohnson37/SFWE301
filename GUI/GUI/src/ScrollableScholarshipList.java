@@ -6,6 +6,7 @@ import javax.swing.ListSelectionModel;
 public class ScrollableScholarshipList extends javax.swing.JFrame {
 
     DefaultListModel defaultListModel = new DefaultListModel();
+    StudentApplication saGUI = null;
     /**
      * Creates new form ScrollableScholarshipList
      */
@@ -209,12 +210,16 @@ public class ScrollableScholarshipList extends javax.swing.JFrame {
         int row = scholarshipList.getSelectedIndex();
         if (row <0){
             JOptionPane.showMessageDialog(this,
-                    "No scholarship selected. Please select a scholaship", 
+                    "No scholarship selected. Please select a scholarship", 
                     "Select Scholarship", 
                     JOptionPane.ERROR_MESSAGE);
         }
-        else {
+        else if (saGUI == null){
             //open Scholarship Application GUI
+            saGUI = new StudentApplication();
+        }
+        else {
+            saGUI.setVisible(true); 
         }
     }//GEN-LAST:event_applyButtonActionPerformed
 
