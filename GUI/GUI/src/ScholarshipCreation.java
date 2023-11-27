@@ -17,6 +17,7 @@ public class ScholarshipCreation extends javax.swing.JFrame {
      */
     public ScholarshipCreation() {
         initComponents();
+        this.setVisible(true);
     }
 
     /**

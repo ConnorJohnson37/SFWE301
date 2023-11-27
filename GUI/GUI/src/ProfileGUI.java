@@ -262,15 +262,16 @@ public class ProfileGUI extends javax.swing.JFrame {
                               
 
     private void updateProfile(java.awt.event.MouseEvent evt) {                               
-        JOptionPane.showMessageDialog(rootPane, "update Profile");
+        this.dispose();
+        EditProfile epGUI = new EditProfile();
     }                              
 
     private void uploadDocs(java.awt.event.MouseEvent evt) {                            
-        JOptionPane.showMessageDialog(rootPane, "Upload docs");
+        UploadGUI uGUI = new UploadGUI();
     }                           
 
     private void returnDashboard(java.awt.event.MouseEvent evt) {                                 
-        JOptionPane.showMessageDialog(rootPane, "Back to Dashboard");
+        this.dispose();
     }                                
 
     /**

@@ -3,40 +3,79 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
-import java.awt.GridLayout;
-import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  *
  * @author micha
  */
-public class FurtherReviewGUI extends javax.swing.JFrame {
-
+public class ApplicationGUI extends javax.swing.JFrame {
+    HashMap<String, String> applicantInfo = new HashMap<String, String>();
     /**
-     * Creates new form FurtherReviewGUI
+     * Creates new form ApplicationGUI
      */
-    public FurtherReviewGUI() {
+    public ApplicationGUI(String name) {
         initComponents();
-        setParameters();
-        setFakeApplicant();
+        setParameters(name);
     }
     
-    public void setParameters() {
-        this.applicantPanel.setLayout(new GridLayout(0, 1));
+    public void initMap() {
+        String temp = """
+                      GPA: 4.0
+                      Major(s): Electrical and Computer Engineering
+                      Minor(s): Mathematics
+                      Academic Achievements: Nobel Peace Price, Honor Roll
+                      Other Information:
+                        Pretty Cool Guy
+                        ...
+                      """;
+        applicantInfo.put("michael villasana", temp);
+        temp = """
+                      GPA: 3.99
+                      Major(s): Spy
+                      Minor(s): Gambling
+                      Academic Achievements: Saved the world.
+                      Other Information:
+                        Amazing Actor
+                        ...
+                      """;
+        applicantInfo.put("daniel craig", temp);
+        temp = """
+                      GPA: 4.0
+                      Major(s): President
+                      Minor(s): Vice President, Emperor
+                      Academic Achievements: World Peace
+                      Other Information:
+                        Pretty nice guy
+                        ...
+                      """;
+        applicantInfo.put("john doe", temp);
+        temp = """
+                      GPA: 1.0
+                      Major(s): Political Science
+                      Minor(s): Economics
+                      Academic Achievements: First National Bank, Broadway Play
+                      Other Information:
+                        Amazing Play
+                        ...
+                      """;
+        applicantInfo.put("alexander hamilton", temp);
+    }
+    
+    public void setParameters(String name) {
         this.setVisible(true);
-        homeButton.setFocusPainted(false);
+        this.studentName.setText("Student Name: " + name);
+        this.homeButton.setFocusPainted(false);
+        initMap();
+        setUserInfo(name);
     }
     
-    public void setFakeApplicant() {
-        ArrayList<String> names = new ArrayList<>();
-        names.add("Michael Villasana");
-        names.add("Daniel Craig");
-        
-        for (String name : names) {
-            StudentFurtherReviewPanel s = new StudentFurtherReviewPanel();
-            s.setStudentName(name);
-            applicantPanel.add(s);
-        }
+    
+    
+    public void setUserInfo(String name) {
+        String lower = name.toLowerCase();
+        String info = applicantInfo.get(lower);
+        this.studentInfoArea.setText(info);
     }
 
     /**
@@ -53,7 +92,10 @@ public class FurtherReviewGUI extends javax.swing.JFrame {
         titlePanel = new javax.swing.JPanel();
         furtherReviewText = new javax.swing.JLabel();
         homeButton = new javax.swing.JButton();
-        applicantPanel = new javax.swing.JPanel();
+        studentInfoPanel = new javax.swing.JPanel();
+        studentName = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        studentInfoArea = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,12 +109,12 @@ public class FurtherReviewGUI extends javax.swing.JFrame {
         furtherReviewText.setBackground(new java.awt.Color(255, 0, 51));
         furtherReviewText.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         furtherReviewText.setForeground(new java.awt.Color(255, 255, 255));
-        furtherReviewText.setText("Applicants for Further Review");
+        furtherReviewText.setText("Viewing Application");
 
         homeButton.setBackground(new java.awt.Color(0, 0, 51));
         homeButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         homeButton.setForeground(new java.awt.Color(255, 255, 255));
-        homeButton.setText("Home");
+        homeButton.setText("Return");
         homeButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         homeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,7 +148,7 @@ public class FurtherReviewGUI extends javax.swing.JFrame {
         UAPanelLayout.setHorizontalGroup(
             UAPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UAPanelLayout.createSequentialGroup()
-                .addContainerGap(1006, Short.MAX_VALUE)
+                .addContainerGap(1018, Short.MAX_VALUE)
                 .addComponent(UAlogo, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addComponent(titlePanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -120,15 +162,32 @@ public class FurtherReviewGUI extends javax.swing.JFrame {
                 .addComponent(titlePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        javax.swing.GroupLayout applicantPanelLayout = new javax.swing.GroupLayout(applicantPanel);
-        applicantPanel.setLayout(applicantPanelLayout);
-        applicantPanelLayout.setHorizontalGroup(
-            applicantPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1280, Short.MAX_VALUE)
+        studentName.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        studentName.setText("Student Name: ");
+
+        studentInfoArea.setColumns(20);
+        studentInfoArea.setRows(5);
+        jScrollPane1.setViewportView(studentInfoArea);
+
+        javax.swing.GroupLayout studentInfoPanelLayout = new javax.swing.GroupLayout(studentInfoPanel);
+        studentInfoPanel.setLayout(studentInfoPanelLayout);
+        studentInfoPanelLayout.setHorizontalGroup(
+            studentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(studentInfoPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(studentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(studentName, javax.swing.GroupLayout.PREFERRED_SIZE, 959, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        applicantPanelLayout.setVerticalGroup(
-            applicantPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 713, Short.MAX_VALUE)
+        studentInfoPanelLayout.setVerticalGroup(
+            studentInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(studentInfoPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(studentName, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -136,21 +195,25 @@ public class FurtherReviewGUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(UAPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(applicantPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(studentInfoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(UAPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(applicantPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 64, Short.MAX_VALUE))
+                .addComponent(studentInfoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 6, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void homeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeButtonActionPerformed
+        // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_homeButtonActionPerformed
 
@@ -171,20 +234,20 @@ public class FurtherReviewGUI extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FurtherReviewGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ApplicationGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FurtherReviewGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ApplicationGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FurtherReviewGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ApplicationGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FurtherReviewGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ApplicationGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FurtherReviewGUI().setVisible(true);
+                
             }
         });
     }
@@ -192,9 +255,12 @@ public class FurtherReviewGUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel UAPanel;
     private javax.swing.JLabel UAlogo;
-    private javax.swing.JPanel applicantPanel;
     private javax.swing.JLabel furtherReviewText;
     private javax.swing.JButton homeButton;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea studentInfoArea;
+    private javax.swing.JPanel studentInfoPanel;
+    private javax.swing.JLabel studentName;
     private javax.swing.JPanel titlePanel;
     // End of variables declaration//GEN-END:variables
 }

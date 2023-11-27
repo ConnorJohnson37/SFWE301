@@ -1,30 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-
-import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
 import java.io.File;
 import java.util.ArrayList;
+
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author micha
- */
-public class UploadGUI extends javax.swing.JFrame {
-    
-    ArrayList<String> docsAdded;
-    /**
-     * Creates new form UploadGUI
-     */
-    public UploadGUI() {
-        docsAdded = new ArrayList<>();
+import java.awt.GridLayout;
+
+
+public class HomePageGUI extends JFrame{
+
+    public HomePageGUI() {
         initComponents();
         setParameters();
     }
@@ -32,8 +19,8 @@ public class UploadGUI extends javax.swing.JFrame {
     public void setParameters() {
         this.setVisible(true);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-
-        uploadPanel.setLayout(new GridLayout(0, 1));
+        loginPanel.setLayout(new GridLayout(0, 1));
+        
     }
 
     /**
@@ -49,11 +36,10 @@ public class UploadGUI extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        uploadButton = new javax.swing.JButton();
-        exitButton = new javax.swing.JButton();
-        uploadText = new javax.swing.JLabel();
-        uploadPanel = new javax.swing.JPanel();
+        applicantButton = new javax.swing.JButton();
+        adminButton = new javax.swing.JButton();
+        loginText = new javax.swing.JLabel();
+        loginPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -68,12 +54,8 @@ public class UploadGUI extends javax.swing.JFrame {
         jLabel3.setBackground(new java.awt.Color(255, 0, 51));
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Upload Documents");
+        jLabel3.setText("Welcome to UASAMS Login Page");
 
-        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -81,9 +63,8 @@ public class UploadGUI extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(172, 172, 172))
         );
         jPanel2Layout.setVerticalGroup(
@@ -91,8 +72,7 @@ public class UploadGUI extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(11, Short.MAX_VALUE))
         );
 
@@ -115,39 +95,39 @@ public class UploadGUI extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        uploadButton.setBackground(new java.awt.Color(0, 0, 51));
-        uploadButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        uploadButton.setForeground(new java.awt.Color(255, 255, 255));
-        uploadButton.setText("Upload Document");
-        uploadButton.addActionListener(new java.awt.event.ActionListener() {
+        applicantButton.setBackground(new java.awt.Color(0, 0, 51));
+        applicantButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        applicantButton.setForeground(new java.awt.Color(255, 255, 255));
+        applicantButton.setText("Applicant Login");
+        applicantButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                uploadButtonActionPerformed(evt);
+                applicantButtonActionPerformed(evt);
             }
         });
 
-        exitButton.setBackground(new java.awt.Color(0, 0, 51));
-        exitButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        exitButton.setForeground(new java.awt.Color(255, 255, 255));
-        exitButton.setText("Exit Upload");
-        exitButton.addActionListener(new java.awt.event.ActionListener() {
+        adminButton.setBackground(new java.awt.Color(0, 0, 51));
+        adminButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        adminButton.setForeground(new java.awt.Color(255, 255, 255));
+        adminButton.setText("Admin Login");
+        adminButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exitButtonActionPerformed(evt);
+                adminButtonActionPerformed(evt);
             }
         });
 
-        uploadText.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        uploadText.setText("Uploaded Documents");
+        loginText.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        loginText.setText("Login: ");
 
-        uploadPanel.setBorder(new javax.swing.border.MatteBorder(null));
+        loginPanel.setBorder(new javax.swing.border.MatteBorder(null));
 
-        javax.swing.GroupLayout uploadPanelLayout = new javax.swing.GroupLayout(uploadPanel);
-        uploadPanel.setLayout(uploadPanelLayout);
-        uploadPanelLayout.setHorizontalGroup(
-            uploadPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout loginPanelLayout = new javax.swing.GroupLayout(loginPanel);
+        loginPanel.setLayout(loginPanelLayout);
+        loginPanelLayout.setHorizontalGroup(
+            loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 864, Short.MAX_VALUE)
         );
-        uploadPanelLayout.setVerticalGroup(
-            uploadPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        loginPanelLayout.setVerticalGroup(
+            loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 573, Short.MAX_VALUE)
         );
 
@@ -160,12 +140,12 @@ public class UploadGUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(uploadText)
+                        .addComponent(loginText)
                         .addGap(69, 69, 69)
-                        .addComponent(uploadButton, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(applicantButton, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(38, 38, 38)
-                        .addComponent(exitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(uploadPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(adminButton, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(loginPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -175,54 +155,28 @@ public class UploadGUI extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(uploadButton, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(exitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(uploadText))
+                        .addComponent(applicantButton, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(adminButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(loginText))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(uploadPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(loginPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(106, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void uploadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uploadButtonActionPerformed
-        // Open up the directory and show the document if valid
-        JFileChooser fileUpload = new JFileChooser();
-		int res = fileUpload.showSaveDialog(null);
-		if(res == JFileChooser.APPROVE_OPTION) {
-			File file_path = new File(fileUpload.getSelectedFile().getAbsolutePath());
-			// Check for valid document format
-			String temp = file_path.getAbsolutePath();
-			if(temp.contains(".pdf") || temp.contains(".docx") || temp.contains(".png")) {
-				//Success
-				JOptionPane.showMessageDialog(null, "Success: Uploaded Document");
-			}
-			else {
-				// Invalid Format
-				JOptionPane.showMessageDialog(null, "Warning: Invalid Document");
-				return;
-			}	
-			// Continue by adding the document added to the JFrame
-			String[] strTokens = temp.split("\\\\");
-			String docFile = strTokens[strTokens.length - 1];
-                        
-                        docsAdded.add(docFile);
-                        
-			JLabel docAdded = new JLabel(docFile);
-                        docAdded.setFont(new java.awt.Font("Segoe UI", 0, 22));
-                        docAdded.setForeground(new java.awt.Color(0, 0, 51));
-    
-			uploadPanel.add(docAdded);
-			this.setVisible(true);
-                }
-    }//GEN-LAST:event_uploadButtonActionPerformed
+    private void applicantButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_applicantButtonActionPerformed
+        // Create a Applicant Login Page
+        LoginGUI userGUI = new LoginGUI();
+                
+    }//GEN-LAST:applicantButton
 
-    private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
-        // Return to the previous page
-        this.dispose();
+    private void adminButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminButtonActionPerformed
+        // Create a Admin Login Page
+        LoginGUI userGUI = new LoginGUI();
         
-    }//GEN-LAST:event_exitButtonActionPerformed
+    }//GEN-LAST:event_adminButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -260,14 +214,13 @@ public class UploadGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton exitButton;
+    private javax.swing.JButton adminButton;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JButton uploadButton;
-    private javax.swing.JPanel uploadPanel;
-    private javax.swing.JLabel uploadText;
+    private javax.swing.JButton applicantButton;
+    private javax.swing.JPanel loginPanel;
+    private javax.swing.JLabel loginText;
     // End of variables declaration//GEN-END:variables
 }

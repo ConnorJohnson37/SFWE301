@@ -31,15 +31,17 @@ public class LoginGUI extends javax.swing.JFrame {
     }
     private boolean getLogin(String userName, String password){
         String temp = this.credentials.get(userName);
+
+        if(temp == null) {
+            return false;
+        }
         
-        if(temp.equals(password)){
+        if(temp.equalsIgnoreCase(password)){
             return true;
         }
         return false;
     }
     
-    
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -218,22 +220,32 @@ public class LoginGUI extends javax.swing.JFrame {
         String name = jTextField1.getText();
         String pass = String.valueOf(jPasswordField1.getPassword());
 
-        JOptionPane.showMessageDialog(rootPane, "name: " + name + "\npass: " + pass);
-
         if(getLogin(name, pass) == true){
              JOptionPane.showMessageDialog(rootPane, "You have been logged in");
+             if(name.equalsIgnoreCase("admin")) {
+                AdminDashBoardGUI adminGUI = new AdminDashBoardGUI();
+             }
+             else {
+                ScrollableScholarshipList userGUI = new ScrollableScholarshipList();
+             }
+             this.dispose();
         }else{
             JOptionPane.showMessageDialog(rootPane, "Wrong username or password");
         }
+
          
     }                      
 
     private void newUser(java.awt.event.MouseEvent evt) {                         
        JOptionPane.showMessageDialog(rootPane, "New User");
+       AccountCreation newuserGUI = new AccountCreation();
+       this.dispose();
     }                        
 
     private void forgotPassword(java.awt.event.MouseEvent evt) {                                
         JOptionPane.showMessageDialog(rootPane, "Reset Password");
+        PasswordResetGUI newpasswordGUI = new PasswordResetGUI();
+        this.dispose();
     }                               
 
     /**

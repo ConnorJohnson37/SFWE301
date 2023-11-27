@@ -31,7 +31,7 @@ public class StudentReviewPanel extends javax.swing.JPanel {
     
     
     public void setStudentName(String name) {
-        this.applicantName.setText(name);
+        this.applicantNameButton.setText(name);
     }
     
     private void setEditable() {
@@ -42,8 +42,9 @@ public class StudentReviewPanel extends javax.swing.JPanel {
         this.rate4.setEnabled(false);
         this.rate5.setEnabled(false);
         
-        String recordedRating = this.applicantName.getText() + ": " + rating + " / 5";
-        this.applicantName.setText(recordedRating);
+        String recordedRating = this.applicantNameButton.getText() + ": " + rating + " / 5";
+        this.applicantNameButton.setText(recordedRating);
+        this.applicantNameButton.setEnabled(false);
     }
 
     /**
@@ -62,13 +63,13 @@ public class StudentReviewPanel extends javax.swing.JPanel {
         jRadioButton8 = new javax.swing.JRadioButton();
         buttonGroup2 = new javax.swing.ButtonGroup();
         buttonGroup3 = new javax.swing.ButtonGroup();
-        applicantName = new javax.swing.JLabel();
         rate1 = new javax.swing.JRadioButton();
         rate3 = new javax.swing.JRadioButton();
         rate2 = new javax.swing.JRadioButton();
         rate4 = new javax.swing.JRadioButton();
         rate5 = new javax.swing.JRadioButton();
         submitRatingButton = new javax.swing.JButton();
+        applicantNameButton = new javax.swing.JButton();
 
         jRadioButton3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jRadioButton3.setText("1");
@@ -103,9 +104,6 @@ public class StudentReviewPanel extends javax.swing.JPanel {
         });
 
         setBackground(new java.awt.Color(204, 204, 204));
-
-        applicantName.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        applicantName.setText("Applicant name: ");
 
         rate1.setBackground(new java.awt.Color(204, 204, 204));
         rate1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -162,14 +160,25 @@ public class StudentReviewPanel extends javax.swing.JPanel {
             }
         });
 
+        applicantNameButton.setBackground(new java.awt.Color(204, 204, 204));
+        applicantNameButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        applicantNameButton.setText("Applicant name:");
+        applicantNameButton.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        applicantNameButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        applicantNameButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                applicantNameButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(applicantName, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(applicantNameButton, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addComponent(rate1)
                 .addGap(29, 29, 29)
                 .addComponent(rate2)
@@ -188,13 +197,13 @@ public class StudentReviewPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(applicantName, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(rate1)
                     .addComponent(rate3)
                     .addComponent(rate2)
                     .addComponent(rate5)
                     .addComponent(rate4)
-                    .addComponent(submitRatingButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(submitRatingButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(applicantNameButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(12, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -264,9 +273,15 @@ public class StudentReviewPanel extends javax.swing.JPanel {
         setEditable();
     }//GEN-LAST:event_submitRatingButtonActionPerformed
 
+    private void applicantNameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_applicantNameButtonActionPerformed
+        //Open Up Application
+        ApplicationGUI aGUI = new ApplicationGUI(this.applicantNameButton.getText());
+
+    }//GEN-LAST:event_applicantNameButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel applicantName;
+    private javax.swing.JButton applicantNameButton;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;

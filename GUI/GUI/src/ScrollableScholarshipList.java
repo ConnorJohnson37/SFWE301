@@ -1,5 +1,3 @@
-package sfwe301project;
-
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
@@ -14,6 +12,7 @@ public class ScrollableScholarshipList extends javax.swing.JFrame {
     public ScrollableScholarshipList() {
         initComponents();
         this.bindData();
+        this.setVisible(true);
     }
 
     private ArrayList getScholarships(){
@@ -75,6 +74,8 @@ public class ScrollableScholarshipList extends javax.swing.JFrame {
         javax.swing.JScrollPane jScrollPane1 = new javax.swing.JScrollPane();
         scholarshipList = new javax.swing.JList<>();
         javax.swing.JButton applyButton = new javax.swing.JButton();
+        javax.swing.JButton profileButton = new javax.swing.JButton();
+
         javax.swing.JButton searchButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -83,7 +84,7 @@ public class ScrollableScholarshipList extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 51, 51));
 
-        logoLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\lucas\\Downloads\\UAlogo.png")); // NOI18N
+        logoLabel.setIcon(new javax.swing.ImageIcon("UAlogo.png")); // NOI18N
 
         titleLabel.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         titleLabel.setText("Student Dashboard");
@@ -134,6 +135,14 @@ public class ScrollableScholarshipList extends javax.swing.JFrame {
             }
         });
 
+        profileButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        profileButton.setText("Profile");
+        profileButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                profileButtonActionPerformed(evt);
+            }
+        });
+
         searchButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         searchButton.setText("Search");
         searchButton.addActionListener(new java.awt.event.ActionListener() {
@@ -151,6 +160,9 @@ public class ScrollableScholarshipList extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(applyButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(profileButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -178,6 +190,9 @@ public class ScrollableScholarshipList extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(applyButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(profileButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addContainerGap())
         );
 
@@ -202,6 +217,11 @@ public class ScrollableScholarshipList extends javax.swing.JFrame {
             //open Scholarship Application GUI
         }
     }//GEN-LAST:event_applyButtonActionPerformed
+
+    private void profileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileButtonActionPerformed
+        ProfileGUI pGUI = new ProfileGUI();
+    }//GEN-LAST:event_profileButtonActionPerformed
+
 
     /**
      * @param args the command line arguments

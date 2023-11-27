@@ -272,8 +272,9 @@ public class EditScholarshipGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_submitEditActionPerformed
 
     private void homeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeButtonActionPerformed
-        //back to admin profile
+        this.dispose();
     }//GEN-LAST:event_homeButtonActionPerformed
+    
     private void populateScrollPane() {
         //first check to see if old text existss (field was filled on creation)
         //can replace with getting text from scholarship object

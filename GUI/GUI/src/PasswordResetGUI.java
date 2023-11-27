@@ -302,6 +302,7 @@ public class PasswordResetGUI extends javax.swing.JFrame {
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         //back to login GUI
+        this.dispose();
     }//GEN-LAST:event_loginButtonActionPerformed
 
     /**
