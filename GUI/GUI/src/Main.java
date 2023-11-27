@@ -31,6 +31,12 @@ public class Main {
                 case 7:
                     UploadGUI uGUI = new UploadGUI();
                     break;
+                case 8:
+                    AccountCreation acGUI = new AccountCreation();
+                    break;
+                case 9:
+                    EditProfile epGUI = new EditProfile();
+                    break;
                 default:
                     break;
 
