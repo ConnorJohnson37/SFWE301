@@ -342,7 +342,7 @@ public class ScholarshipCreation extends javax.swing.JFrame {
         String comments = jTextArea3.getText();
         String requirements = jTextArea2.getText();
         
-        if (funds.isEmpty() || day.isEmpty() || month.isEmpty() || year.isEmpty() || comments.isEmpty() || requirements.isEmpty() || name.isEmpty() || 
+        if (funds.isEmpty() || day.isEmpty() || month.isEmpty() || year.isEmpty() || requirements.isEmpty() || name.isEmpty() || 
                 description.isEmpty() || fname.isEmpty() || mname.isEmpty() || lname.isEmpty() || email.isEmpty()){
             JOptionPane.showMessageDialog(this, "A field is emptty", "Try Again", JOptionPane.ERROR_MESSAGE);
         }
