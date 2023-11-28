@@ -1,6 +1,8 @@
 
 import java.util.Random;
 
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -276,6 +278,7 @@ public class PasswordResetGUI extends javax.swing.JFrame {
         else {
             //error where user doesn't exist
             //run until user found
+            JOptionPane.showMessageDialog(this, "Invalid Username", "Try Again", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_submitUsernameActionPerformed
 
