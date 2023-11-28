@@ -13,6 +13,8 @@ import javax.swing.JOptionPane;
 public class LoginGUI extends javax.swing.JFrame {
      Hashtable<String, String> credentials;
      String userName, password;
+
+     AccountCreation newuserGUI = null;
   
     /**
      * Creates new form Login
@@ -238,8 +240,13 @@ public class LoginGUI extends javax.swing.JFrame {
 
     private void newUser(java.awt.event.MouseEvent evt) {                         
        JOptionPane.showMessageDialog(rootPane, "New User");
-       AccountCreation newuserGUI = new AccountCreation();
-       this.dispose();
+
+       if(newuserGUI == null) {
+            newuserGUI = new AccountCreation();
+       }
+       else {
+        newuserGUI.setVisible(true);
+       }
     }                        
 
     private void forgotPassword(java.awt.event.MouseEvent evt) {                                
