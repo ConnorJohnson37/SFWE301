@@ -239,7 +239,6 @@ public class LoginGUI extends javax.swing.JFrame {
     }                      
 
     private void newUser(java.awt.event.MouseEvent evt) {                         
-       JOptionPane.showMessageDialog(rootPane, "New User");
 
        if(newuserGUI == null) {
             newuserGUI = new AccountCreation();
@@ -250,7 +249,6 @@ public class LoginGUI extends javax.swing.JFrame {
     }                        
 
     private void forgotPassword(java.awt.event.MouseEvent evt) {                                
-        JOptionPane.showMessageDialog(rootPane, "Reset Password");
         PasswordResetGUI newpasswordGUI = new PasswordResetGUI();
     }                               
 
