@@ -1,18 +1,16 @@
 ## Getting Started
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+This is the final product of the UASAMS system for SFWE 301. This does not require a package as this was the only way we were all able to run the code without issues.
+To run this project in VSCode, only run the Main.java file using the "Run Java" button on the top right when on the Main.java. This should work and automatically pop up a 
+GUI that tells you to choose a certain login. The rest can be done from there.
 
-## Folder Structure
+To login as an admin:
+username: Admin (case sensitive)
+password: password
 
-The workspace contains two folders by default, where:
+To login as a user:
+username: Connor (case sensitive)
+password: password
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Thank you and godspeed and have fun with using this system,
+SFWE 301 Team 1
