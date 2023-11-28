@@ -122,7 +122,7 @@ public class ScrollableScholarshipList extends javax.swing.JFrame {
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
         scholarshipList.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Scholarship for Special Needs Students", "Autism Speaks", "AZ School for the Deaf and Blind", "Batman Scholarship (for orphaned students only)" };
+            String[] strings = { "Scholarship for SFWE Students", "Autism Speaks", "AZ School for the Deaf and Blind", "Batman Scholarship (for orphaned students only)" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });

@@ -14,6 +14,7 @@ public class ProfileGUI extends javax.swing.JFrame {
     /**
      * Creates new form ProfileGUI
      */
+    EditProfile epGUI = null;
     public ProfileGUI() {
         initComponents();
         this.setVisible(true);
@@ -262,8 +263,12 @@ public class ProfileGUI extends javax.swing.JFrame {
                               
 
     private void updateProfile(java.awt.event.MouseEvent evt) {                               
-        this.dispose();
-        EditProfile epGUI = new EditProfile();
+        if(epGUI == null) {
+            epGUI = new EditProfile();
+        }
+        else {
+            epGUI.setVisible(true);
+        }
     }                              
 
     private void uploadDocs(java.awt.event.MouseEvent evt) {                            
